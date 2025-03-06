@@ -129,6 +129,7 @@ dependencies {
     implementation(libs.avif.integration)
     implementation(libs.jxl.integration)
     implementation(libs.okio)
+    implementation（'com.github.penfeizhou.android.animation:avif:3.0.1'）
     implementation(libs.picasso) {
         exclude(group = "com.squareup.okhttp3", module = "okhttp")
     }
