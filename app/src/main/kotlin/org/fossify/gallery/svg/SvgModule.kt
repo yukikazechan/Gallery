@@ -14,12 +14,12 @@ import com.github.penfeizhou.animation.avif.decode.AVIFDecoder
 @GlideModule
 class SvgModule : AppGlideModule() {
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
-        // 保留现有的 SVG 支持
+        // SVG support (unchanged)
         registry.register(SVG::class.java, PictureDrawable::class.java, SvgDrawableTranscoder())
                 .append(InputStream::class.java, SVG::class.java, SvgDecoder())
 
-        // 添加 AVIF 动画支持
-        registry.append(Registry.BUCKET_ANIMATION, APNGDrawable::class.java, APNGDecoder.APNGDrawableDecoder(context))
+        // AVIF animation support (corrected)
+        registry.append(Registry.BUCKET_ANIMATION, AVIFDrawable::class.java, AVIFDecoder.AVIFDrawableDecoder(context))
     }
 
     override fun isManifestParsingEnabled() = false
